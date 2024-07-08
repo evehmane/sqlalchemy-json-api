@@ -379,7 +379,7 @@ class QueryBuilder(object):
             multiple=False,
             **kwargs
         )
-        query = query.where(query._froms[0].c.data.isnot(None))
+        query = query.where(query.get_final_froms()[0].c.data.isnot(None))
         return query
 
 
